@@ -1,0 +1,24 @@
+
+{% extends 'Createprofile/base.html' %}
+
+{% block content %}
+    <div class="container">
+        {% if record %}
+        <div class="row">
+            <div class="col-md-8">
+            <h4>User:{{record.user}}</h4>
+            <h4>Name:{{record.Name}}</h4>
+            <h4>DOB:{{record.dob}}</h4>
+            <h4>Gender:{{record.gender}}</h4>
+            <h4>Photo:<img style="float:right;width:200px;height:200px;" src="{{ record.photo.url}}"></h4>
+                </div>
+        </div>
+        {% endif %}
+    </div>
+
+<br>
+<br>
+<br>
+<a href="{% url 'update' %}">
+<input type="submit" value="Update"></a>
+{% endblock %}

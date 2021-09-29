@@ -1,0 +1,22 @@
+
+{% extends 'Createprofile/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container">
+        <form method="post" class="jumbotron">
+           {% csrf_token %}
+            <label for="un">Enter Username</label>
+            <input type="text" id="un" name="un" class="form-control"><br><br>
+            <label for="pw">Enter Password</label>
+            <input type="password" id="pw" name="pw" class="form-control"><br><br>
+
+            {% if messages %}
+                {% for i in messages %}
+                    {{msg}}
+                {% endfor %}
+            {% endif %}
+            <input type="submit" value="Login" class="btn btn-success">
+        </form>
+    </div>
+{% endblock %}
